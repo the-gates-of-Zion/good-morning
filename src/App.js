@@ -42,7 +42,19 @@ class App extends React.Component {
     const { hour, username,dateGreetings } = this.state;
     const greeting = hour < 12 ? 'Good Morning 😊☀️' : 'Good Evening 😊🌆';
     return(
-        <div className="App">
+        <div 
+          className="App"
+          style={{
+            backgroundColor: 'grey',
+            top:'0',
+            left:'0',
+            width: '100%',
+            height: '100%',
+            position:'fixed',
+            padding:'0',
+            margin:'0',
+          }}
+        >
         <Container
           
         >
