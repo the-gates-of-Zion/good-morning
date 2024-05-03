@@ -35,7 +35,10 @@ class Greeting extends Component {
     const greeting = hour < 12 ? 'Good Morning 😊☀️' : 'Good Evening 😊🌆';
 
     return (
-      <div className="App">
+      <div 
+           className="App"
+           style={{color: (hour < 12) ?'black':'white'}}
+      >
         <h2>{greeting} {username}! Here is a bible passage for you:</h2>
         <p>我必安然躺下睡覺，因為獨有你─耶和華使我安然居住。</p>
         <p>詩篇4:8</p>

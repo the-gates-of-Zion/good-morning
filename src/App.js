@@ -45,7 +45,7 @@ class App extends React.Component {
         <div 
           className="App"
           style={{
-            backgroundColor: 'grey',
+            backgroundColor: '#474343',
             top:'0',
             left:'0',
             width: '100%',
