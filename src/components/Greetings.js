@@ -36,7 +36,7 @@ class Greeting extends Component {
 
     return (
       <div className="App">
-        <h2>{greeting} {username}! Here is a bible passage for you on {dateGreetings}:</h2>
+        <h2>{greeting} {username}! Here is a bible passage for you:</h2>
         <p>我必安然躺下睡覺，因為獨有你─耶和華使我安然居住。</p>
         <p>詩篇4:8</p>
       </div>
