@@ -41,11 +41,12 @@ class App extends React.Component {
   render(){
     const { hour, username,dateGreetings } = this.state;
     const greeting = hour < 12 ? 'Good Morning 😊☀️' : 'Good Evening 😊🌆';
+    var bg = hour < 12 ? 'white' : '#474343';
     return(
         <div 
           className="App"
           style={{
-            backgroundColor: '#474343',
+            backgroundColor: bg,
             top:'0',
             left:'0',
             width: '100%',
