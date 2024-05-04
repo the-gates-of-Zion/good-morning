@@ -41,7 +41,7 @@ class App extends React.Component {
  
   render(){
     const { hour } = this.state;
-    var dayNight = hour > 12;
+    var dayNight = hour <= 12;
     var bg = dayNight ? '#c2f4ff' : '#474343';
     return(
         <div 
