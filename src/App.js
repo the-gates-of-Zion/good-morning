@@ -40,8 +40,7 @@ class App extends React.Component {
  
   render(){
     const { hour, username,dateGreetings } = this.state;
-    var dayNight = hour < 12
-    const greeting = dayNight ? 'Good Morning 😊☀️' : 'Good Evening 😊🌆';
+    var dayNight = hour < 12;
     var bg = dayNight ? '#c2f4ff' : '#474343';
     return(
         <div 
@@ -97,7 +96,9 @@ class App extends React.Component {
       
           
       </Box>
-      <Greeting/>
+      <Greeting
+        dayNight = {dayNight}
+      />
       </Container>
       </div>
     
