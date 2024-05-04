@@ -40,8 +40,9 @@ class App extends React.Component {
  
   render(){
     const { hour, username,dateGreetings } = this.state;
-    const greeting = hour < 12 ? 'Good Morning 😊☀️' : 'Good Evening 😊🌆';
-    var bg = hour < 12 ? '#c2f4ff' : '#474343';
+    var dayNight = hour < 12
+    const greeting = dayNight ? 'Good Morning 😊☀️' : 'Good Evening 😊🌆';
+    var bg = dayNight ? '#c2f4ff' : '#474343';
     return(
         <div 
           className="App"
@@ -77,7 +78,7 @@ class App extends React.Component {
         alignItems="center"
         justifyContent="center"
       >
-        {hour < 12 ?
+        {dayNight ?
         <img
         src={logo} 
         className="App-logo" 
