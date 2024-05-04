@@ -42,7 +42,7 @@ class Greeting extends Component {
       >
         <h2>{greeting} {username}! Here is a bible passage for you:</h2>
         {hour < 12 ?
-        (<p>"Psalm 118:24 - This is the day that the Lord has made; let us rejoice and be glad in it."</p>):
+        (<p>This is the day that the Lord has made; let us rejoice and be glad in it. Psalm 118:24</p>):
         (<p>我必安然躺下睡覺，因為獨有你─耶和華使我安然居住。詩篇4:8</p>)}
       </div>
     );

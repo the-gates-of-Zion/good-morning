@@ -10,30 +10,4 @@
 body{
   background-color:#66D0FF;
 }
-.cloud{ 
-   margin-top:70px;
-   width:50px;
-   height:20px;
-   background:#ECEFF1;
-   box-shadow: 10px 10px rgba(0,0,0,0.2);
-   border-radius:100px;
-}
-.cloud::after, .cloud::before{
-    content:"";
-    position:relative;
-    display:inline-block;
-    background:inherit;
-    border-radius:inherit;
-}
-.cloud::after{
-    width:10px;
-    height:10px;
-    top:-220px;
-    left:50px;
-}
-.cloud::before{
-    width:80px;
-    height:80px;
-    top: -70px;
-    left:130px;
-}
+
