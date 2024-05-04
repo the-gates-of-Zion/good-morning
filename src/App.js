@@ -12,7 +12,7 @@ class App extends React.Component {
     super(props);
     
     this.state = {
-      speed: 7,
+      speed: 25,
       hour: null,
     
 
@@ -41,7 +41,7 @@ class App extends React.Component {
   render(){
     const { hour, username,dateGreetings } = this.state;
     const greeting = hour < 12 ? 'Good Morning 😊☀️' : 'Good Evening 😊🌆';
-    var bg = hour < 12 ? 'white' : '#474343';
+    var bg = hour < 12 ? '#c2f4ff' : '#474343';
     return(
         <div 
           className="App"
@@ -59,7 +59,16 @@ class App extends React.Component {
         <Container
           
         >
-        
+          {/* <Box 
+
+
+        display="flex" 
+        alignItems="right"
+        justifyContent="center"
+      >
+        <div class="cloud"/>
+      </Box> */}
+         
       
       <Box 
         m={2} pt={3}
