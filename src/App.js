@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import moon from './moon.svg';
+import cloud from './images/cloudTrans.png';
   import React from 'react';
 import Greeting from './components/Greetings';
 import Container from '@mui/material/Container';
@@ -39,8 +40,8 @@ class App extends React.Component {
   };
  
   render(){
-    const { hour, username,dateGreetings } = this.state;
-    var dayNight = hour < 12;
+    const { hour } = this.state;
+    var dayNight = hour > 12;
     var bg = dayNight ? '#c2f4ff' : '#474343';
     return(
         <div 
@@ -59,17 +60,7 @@ class App extends React.Component {
         <Container
           
         >
-          {/* <Box 
 
-
-        display="flex" 
-        alignItems="right"
-        justifyContent="center"
-      >
-        <div class="cloud"/>
-      </Box> */}
-         
-      
       <Box 
         m={2} pt={3}
         component="section" 
