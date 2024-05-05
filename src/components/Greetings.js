@@ -1,4 +1,5 @@
 // src/components/Greeting.js
+import { Container } from '@mui/material';
 import React, { Component } from 'react';
 
 export default class Greeting extends Component {
@@ -23,6 +24,7 @@ export default class Greeting extends Component {
     
     
     return (
+      <Container>
       <div 
            className="App"
            style={{color: (dayNight) ? 
@@ -38,6 +40,7 @@ export default class Greeting extends Component {
         (<p>This is the day that the Lord has made; let us rejoice and be glad in it. Psalm 118:24</p>)
   }
       </div>
+      </Container>
     );
   }
 }
