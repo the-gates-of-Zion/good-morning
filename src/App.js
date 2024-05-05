@@ -1,12 +1,10 @@
 import logo from './logo.svg';
 import moon from './moon.svg';
-import cloud from './images/cloudTrans.png';
   import React from 'react';
 import Greeting from './components/Greetings';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
+
 
 
 import './Appd.css';
@@ -46,7 +44,7 @@ class App extends React.Component {
     var date = new Date();
     var hour = date.getHours();
     var dayNight
-    if(hour < 12){dayNight = true;}else{dayNight = false;}
+    if(hour >= 12){dayNight = true;}else{dayNight = false;}
     var bg = dayNight ? '#c2f4ff' : '#474343';
     return(
         <div 

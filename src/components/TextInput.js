@@ -20,11 +20,7 @@ export default class TextInput extends Component {
                 maxWidth: '100%',
               }}
             >
-              <TextField 
-                fullWidth 
-                label="Tell me what you are thinking" 
-                id="fullWidth" 
-              />
+              <TextField fullWidth label="Tell me what you are thinking" id="fullWidth" />
             </Box>
           );
     }
