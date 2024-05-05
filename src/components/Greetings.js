@@ -18,14 +18,18 @@ export default class Greeting extends Component {
 
   
   render() {
-    const {  username,dayNight } = this.state;
-    const greeting = dayNight ? 'Good evening 😊🌆': 'Good morning 😊☀️';
+    var {  username,dayNight } = this.state;
+    var greeting = dayNight ? 'Good evening 😊🌆':'Good morning 😊☀️';
     
     
     return (
       <div 
            className="App"
-           style={{color: (dayNight) ?'white':'black'}}
+           style={{color: (dayNight) ? 
+            'white'
+            :
+            'black'
+          }}
       >
         <h2>{greeting} {username}! Here is a bible passage for you:</h2>
         {dayNight ?

@@ -5,8 +5,12 @@ import cloud from './images/cloudTrans.png';
 import Greeting from './components/Greetings';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+
 
 import './Appd.css';
+import TextInput from './components/TextInput';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,33 +19,34 @@ class App extends React.Component {
     this.state = {
       speed: 25,
       hour: null,
-    
+      dayNight:true
 
     };
   }
   componentDidMount = () => {
-    this.getHour();
-    this.getDay();
-  }
-  getDay = () => {
-    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-
-    const d = new Date();
-    let dateDay = weekday[d.getDay()];
-
-    let dateGreetings = '' + dateDay
+    this.getTheme();
     
-    this.setState({ dateGreetings });
+  }
+  
+  
+  getTheme = () => {
+    var date = new Date();
+    var hour = date.getHours();
+    var dayNight
+    if(hour > 12){
+      dayNight = true;
+    }else{
+      dayNight = false;
     }
-  getHour = () => {
-    const date = new Date();
-    const hour = date.getHours();
-    this.setState({ hour });
+    this.setState({ dayNight });
   };
  
   render(){
-    const { hour } = this.state;
-    var dayNight = hour <= 12;
+    //var { dayNight } = this.state;
+    var date = new Date();
+    var hour = date.getHours();
+    var dayNight
+    if(hour < 12){dayNight = true;}else{dayNight = false;}
     var bg = dayNight ? '#c2f4ff' : '#474343';
     return(
         <div 
@@ -87,9 +92,16 @@ class App extends React.Component {
       
           
       </Box>
-      <Greeting
-        dayNight = {dayNight}
-      />
+      {
+      dayNight 
+      ?
+      <Greeting dayNight = {false}/>
+      :
+      <Greeting dayNight = {true}/>
+      }
+      </Container>
+      <Container>
+        <TextInput/>
       </Container>
       </div>
     
