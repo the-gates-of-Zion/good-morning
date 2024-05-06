@@ -74,6 +74,7 @@ export default class TextInput extends Component {
                 <TextField fullWidth label="Tell me what you are thinking" id="fullWidth" 
                     onChange={this.handleTextFieldChange.bind(this)}
                     onKeyDown={this.keyPress.bind(this)}
+                    sx={{ input: { color: color } }} 
                 />
                 <Button variant="contained" endIcon={<SendIcon />} onClick={this.getText.bind(this)}>
                     Send
