@@ -5,8 +5,10 @@ import Greeting from './components/Greetings';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 
-import './Appd.css';
-import { query } from './components/getverse';
+
+
+import './Appe.css';
+import TextInput from './components/TextInput';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,34 +17,36 @@ class App extends React.Component {
     this.state = {
       speed: 25,
       hour: null,
-    
+      dayNight:true
 
     };
   }
   componentDidMount = () => {
-    this.getHour();
-    this.getDay();
-  }
-  getDay = () => {
-    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-
-    const d = new Date();
-    let dateDay = weekday[d.getDay()];
-
-    let dateGreetings = '' + dateDay
+    this.getTheme();
     
-    this.setState({ dateGreetings });
+  }
+  
+  
+  getTheme = () => {
+    var date = new Date();
+    var hour = date.getHours();
+    var dayNight
+    if(hour > 12){
+      dayNight = true;
+    }else{
+      dayNight = false;
     }
-  getHour = () => {
-    const date = new Date();
-    const hour = date.getHours();
-    this.setState({ hour });
+    this.setState({ dayNight });
   };
  
   render(){
-    const { hour, username,dateGreetings } = this.state;
-    const greeting = hour < 12 ? 'Good Morning 😊☀️' : 'Good Evening 😊🌆';
-    var bg = hour < 12 ? '#c2f4ff' : '#474343';
+    //var { dayNight } = this.state;
+    var date = new Date();
+    var hour = date.getHours();
+    var dayNight
+    if(hour < 12){dayNight = true;}else{dayNight = false;}
+    //if(hour >= 12){dayNight = true;}else{dayNight = false;}
+    var bg = dayNight ? '#c2f4ff' : '#474343';
     return(
         <div 
           className="App"
@@ -60,17 +64,7 @@ class App extends React.Component {
         <Container
           
         >
-          {/* <Box 
 
-
-        display="flex" 
-        alignItems="right"
-        justifyContent="center"
-      >
-        <div class="cloud"/>
-      </Box> */}
-         
-      
       <Box 
         m={2} pt={3}
         component="section" 
@@ -78,7 +72,7 @@ class App extends React.Component {
         alignItems="center"
         justifyContent="center"
       >
-        {hour < 12 ?
+        {dayNight ?
         <img
         src={logo} 
         className="App-logo" 
@@ -97,8 +91,23 @@ class App extends React.Component {
       
           
       </Box>
-      <Greeting/>
-      <button onClick={query('Good morning')}></button>
+      {
+      dayNight 
+      ?
+      <Greeting dayNight = {false}/>
+      :
+      <Greeting dayNight = {true}/>
+      }
+      </Container>
+      <Container>
+        
+        {
+        dayNight 
+        ?
+        <TextInput dayNight={true}/>
+        :
+        <TextInput dayNight={false}/>
+        }
       </Container>
       </div>
     
