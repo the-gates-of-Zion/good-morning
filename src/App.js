@@ -9,6 +9,7 @@ import Box from '@mui/material/Box';
 
 import './Appe.css';
 import TextInput from './components/TextInput';
+import DayBackground from './components/DayBackground';
 
 class App extends React.Component {
   constructor(props) {
@@ -44,8 +45,8 @@ class App extends React.Component {
     var date = new Date();
     var hour = date.getHours();
     var dayNight
-    if(hour < 12){dayNight = true;}else{dayNight = false;}
-    //if(hour >= 12){dayNight = true;}else{dayNight = false;}
+    //if(hour < 12){dayNight = true;}else{dayNight = false;}
+    if(hour >= 12){dayNight = true;}else{dayNight = false;}
     var bg = dayNight ? '#c2f4ff' : '#474343';
     return(
         <div 
@@ -61,9 +62,14 @@ class App extends React.Component {
             margin:'0',
           }}
         >
-        <Container
-          
-        >
+          {
+      dayNight 
+      ?
+      <DayBackground/>
+      :
+      <div/>
+      }
+      <Container>
 
       <Box 
         m={2} pt={3}
