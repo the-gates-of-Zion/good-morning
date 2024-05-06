@@ -6,6 +6,7 @@ import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 
 import './Appd.css';
+import { query } from './components/getverse';
 
 class App extends React.Component {
   constructor(props) {
@@ -97,6 +98,7 @@ class App extends React.Component {
           
       </Box>
       <Greeting/>
+      <button onClick={query('Good morning')}></button>
       </Container>
       </div>
     
