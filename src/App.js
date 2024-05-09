@@ -10,6 +10,8 @@ import Box from '@mui/material/Box';
 import './Appe.css';
 import TextInput from './components/TextInput';
 import DayBackground from './components/DayBackground';
+import NightBackground from './components/NightBackground'
+
 
 class App extends React.Component {
   constructor(props) {
@@ -67,7 +69,7 @@ class App extends React.Component {
       ?
       <DayBackground/>
       :
-      <div/>
+      <NightBackground/>
       }
       <Container>
 
