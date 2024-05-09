@@ -15,6 +15,9 @@ export default class NightBackground extends Component {
 
   meteorsCatch(){
     this.setState({catch:true})
+    if(this.props.catchMeteor){
+      this.props.catchMeteor()
+    }
     alert("You got my heart!❤️")
   }
   
@@ -22,12 +25,12 @@ export default class NightBackground extends Component {
     var meteors = []
     for (var i = 0;i<this.state.meterosNum;i++){
       meteors.push(
-        (<div class={`meteor-${i}`} onClick={this.meteorsCatch.bind(this)}></div>)
+        (<div key={i} className={`meteor-${i}`} onClick={this.meteorsCatch.bind(this)}></div>)
       )
     }
     return (
       <div>
-        <div class="star"></div>
+        <div className="star"></div>
         {
           meteors
         }

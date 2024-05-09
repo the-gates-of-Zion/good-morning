@@ -20,7 +20,8 @@ class App extends React.Component {
     this.state = {
       speed: 25,
       hour: null,
-      dayNight:true
+      dayNight:true,
+      catch: false
 
     };
   }
@@ -41,7 +42,10 @@ class App extends React.Component {
     }
     this.setState({ dayNight });
   };
- 
+ catchMeteor(){
+  this.setState({catch:true})
+  //console.log("catch from parents")
+ }
   render(){
     //var { dayNight } = this.state;
     var date = new Date();
@@ -69,7 +73,9 @@ class App extends React.Component {
       ?
       <DayBackground/>
       :
-      <NightBackground/>
+      <NightBackground 
+            catchMeteor = {this.catchMeteor.bind(this)}
+      />
       }
       <Container>
 
