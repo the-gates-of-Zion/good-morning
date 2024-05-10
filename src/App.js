@@ -11,6 +11,7 @@ import './Appe.css';
 import TextInput from './components/TextInput';
 import DayBackground from './components/DayBackground';
 import NightBackground from './components/NightBackground'
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
 
 
 class App extends React.Component {
@@ -45,6 +46,9 @@ class App extends React.Component {
  catchMeteor(){
   this.setState({catch:true})
   //console.log("catch from parents")
+ }
+ handleClose(){
+  this.setState({catch:false})
  }
   render(){
     //var { dayNight } = this.state;
@@ -123,6 +127,28 @@ class App extends React.Component {
         <TextInput dayNight={false}/>
         }
       </Container>
+      <Dialog
+        open={this.state.catch}
+        onClose={this.handleClose.bind(this)}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"Congratulations Jane! You have captured a meteor💫, like you have captured my heart ❤️"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            {`We’re like shooting stars, Brief, yet infinite, in this cosmic ballet. 
+            可是相聚離開 都有時候,
+            天地過去, 也有時候
+            也沒有甚麼會永垂不朽,
+            可是我,有時候,
+            寧願選擇留戀不放手,
+            也許 等到風景都看透,
+            也許 你會陪我,看細水長流`}
+          </DialogContentText>
+        </DialogContent>
+      </Dialog>
       </div>
     
     );

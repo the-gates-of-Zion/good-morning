@@ -18,7 +18,7 @@ export default class NightBackground extends Component {
     if(this.props.catchMeteor){
       this.props.catchMeteor()
     }
-    alert("You got my heart!❤️")
+    //alert("You got my heart!❤️")
   }
   
   render() {
