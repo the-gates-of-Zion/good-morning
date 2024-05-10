@@ -134,14 +134,13 @@ class App extends React.Component {
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-          {"Congratulations Jane! You have captured a meteor💫, like you have captured my heart ❤️"}
+          {"Congratulations! You have captured a meteor💫, like you have captured my heart ❤️"}
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
             {`We’re like shooting stars, Brief, yet infinite, in this cosmic ballet. 
             可是相聚離開 都有時候,
             天地過去, 也有時候
-            也沒有甚麼會永垂不朽,
             可是我,有時候,
             寧願選擇留戀不放手,
             也許 等到風景都看透,
