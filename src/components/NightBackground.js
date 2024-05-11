@@ -25,12 +25,12 @@ export default class NightBackground extends Component {
     var meteors = []
     for (var i = 0;i<this.state.meterosNum;i++){
       meteors.push(
-        (<div key={i} className={`meteor-${i}`} onClick={this.meteorsCatch.bind(this)}></div>)
+        (<div key={i} style={{zIndex:"100"}} className={`meteor-${i}`} onClick={this.meteorsCatch.bind(this)}></div>)
       )
     }
     return (
       <div>
-        <div className="star"></div>
+        <div className="star" ></div>
         {
           meteors
         }
