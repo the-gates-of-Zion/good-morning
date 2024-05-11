@@ -12,7 +12,9 @@ import TextInput from './components/TextInput';
 import DayBackground from './components/DayBackground';
 import NightBackground from './components/NightBackground'
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
-
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+// or
 
 class App extends React.Component {
   constructor(props) {
@@ -128,25 +130,54 @@ class App extends React.Component {
         }
       </Container>
       <Dialog
+        fullScreen={true}
         open={this.state.catch}
         onClose={this.handleClose.bind(this)}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
+        PaperProps={{
+          style: {
+            backgroundColor: '#5e5a4f',
+            color: 'white',
+          },
+        }}
       >
+        
         <DialogTitle id="alert-dialog-title">
-          {"Congratulations! You have captured a meteor💫, like you have captured my heart ❤️"}
+          {"Congratulations!😊 You have captured a meteor💫, like you have captured my heart ❤️"}
         </DialogTitle>
         <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            {`We’re like shooting stars, Brief, yet infinite, in this cosmic ballet. 
-            可是相聚離開 都有時候,
-            天地過去, 也有時候
-            可是我,有時候,
-            寧願選擇留戀不放手,
-            也許 等到風景都看透,
-            也許 你會陪我,看細水長流`}
+          <DialogContentText id="alert-dialog-description" style={{color:'white'}}>
+            {`We’re like shooting stars, Brief, yet infinite, in this cosmic ballet. `}
+            <br/>
+            {`相聚,離開 都有時候,`}
+            <br/>
+            {`
+            天地過去, 也有時候`}
+            <br/>
+            {`
+            可是我,有時候,`}
+            <br/>
+            {`
+            寧願選擇留戀不放手,`}
+            <br/>
+            {`
+            也許, 等到風景都看透,`}
+            <br/>
+            {`
+            也許, 你會陪我,看細水長流`}
           </DialogContentText>
+          <IconButton
+              edge="start"
+              color="inherit"
+              onClick={this.handleClose.bind(this)}
+              aria-label="close"
+              backgroundColor="grey"
+            >
+              {"😊Okay"}
+            </IconButton>
         </DialogContent>
+        
       </Dialog>
       </div>
     
