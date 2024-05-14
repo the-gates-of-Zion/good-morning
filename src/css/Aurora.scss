@@ -1,0 +1,64 @@
+/* All CSS aurora / northern lights made using box-shadow, simple animations, and Sass to help loop and randomize said animations and aspect. */
+
+/* Define the colors */
+$COLOR_BG_DARK: hsl(200%, 50%, 10%);
+$COLOR_STAR: hsl(200%, 100%, 90%);
+$COLOR_SKY_TOP: hsla(200%, 80%, 10%, 0.2);
+$COLOR_SKY_BOTTOM: hsla(180%, 50%, 35%, 0.3);
+$aur-number: 10;
+
+/* Set up the background */
+body {
+  background: $COLOR_BG_DARK;
+}
+
+.bg {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  height: 100vh;
+  max-height: 600px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Create the aurora effect using spans with randomized box-shadow */
+%div {
+  display: block;
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background: transparent;
+  box-shadow: random(0px, 10px) random(0px, 10px) $COLOR_SKY_TOP,
+              random(0px, 10px) random(0px, 10px) $COLOR_SKY_BOTTOM;
+  animation: aurora-animation random(3s, 13s) infinite;
+}
+
+/* Create the star pattern using a gradient on a fixed div */
+%span {
+  display: block;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: radial-gradient(circle, $COLOR_STAR 1%, transparent 1%);
+  animation: star-animation random(5s, 25s) infinite;
+}
+
+/* Animation keyframes */
+@keyframes aurora-animation {
+  0% {
+    margin-top: 0;
+  }
+  100% {
+    margin-top: $aur-number;
+  }
+}
+
+@keyframes star-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
